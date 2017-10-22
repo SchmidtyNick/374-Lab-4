@@ -8,12 +8,8 @@ public Date getDateReceieved()
 {
 	return this.dateReceieved;
 }
-public double getPrice()
+public double calculatePrice()
 {
-	return this.price;
-}
-public int getOrderID()
-{
-	return this.orderID;
+	
 }
 }
