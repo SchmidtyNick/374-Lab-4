@@ -10,6 +10,9 @@ public Date getDateReceieved()
 }
 public double calculatePrice()
 {
-	
+	for(int i =0; i <9; i++)
+	{
+		return this.price += 
+	}
 }
 }

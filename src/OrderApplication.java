@@ -1,9 +1,9 @@
 
-public class OrderApplication extends Order
+public class OrderApplication
 {
 public boolean createOrder(Order)
 {
-	
+	//Call order constructor
 }
 private boolean importCatalogue()
 {
