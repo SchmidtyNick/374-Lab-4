@@ -49,7 +49,10 @@ public static boolean createOrder(Order order) throws IOException
 		while(iterator.hasNext())
 		{
 			Product product = iterator.next();
-			order.add(product, 1);
+			System.out.println("Please enter a quantity for the item: " + product);
+			Scanner scanner = new Scanner(System.in);
+			int quantity = scanner.nextInt();
+			order.add(product, quantity);
 		}
 	}
 	return items;
