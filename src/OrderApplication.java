@@ -1,12 +1,58 @@
-
+import java.io.*;
+ import java.nio.file.Paths;
+ import java.util.*;
+ 
 public class OrderApplication
 {
-public boolean createOrder(Order)
+private static ArrayList<Product> products = new ArrayList<Product>();
+public static void main(String[] args) throws IOException
 {
-	//Call order constructor
+
+	OrderApplication OA = new OrderApplication();
+	Customer customer = new Customer( "Nickolas", "5621 Gordon", 0, 0);
+	Order order = new Order(customer);
+	
+	OA.createOrder(order);
+	order.calculatePrice();
 }
-private boolean importCatalogue()
+private static boolean importCatalogue() throws IOException 
 {
-	return true;
+	boolean items = false;
+	Scanner in = null;
+	try {
+		in = new Scanner(Paths.get("Catalogue.txt"));
+		while (in.hasNextLine())
+		{
+			String[] data = in.nextLine().split(",");
+			Product product = new Product(data[0], Double.parseDouble(data[1]), Integer.parseInt(data[2]));
+			products.add(product);
+		}
+	}
+	finally
+	{
+		if( in != null)
+		{
+			in.close();
+			items = true;
+		}
+	}
+	return items;
 }
+public static boolean createOrder(Order order) throws IOException
+{
+	boolean items = importCatalogue();
+	
+	if(items)
+	{
+		Iterator<Product> iterator = products.iterator();
+		
+		while(iterator.hasNext())
+		{
+			Product product = iterator.next();
+			order.add(product, 1);
+		}
+	}
+	return items;
+}
+
 }

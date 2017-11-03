@@ -1,5 +1,5 @@
 
-public class OrderLine extends Order
+public class OrderLine
 {
 private int quantity;
 private double price;
@@ -11,15 +11,15 @@ public OrderLine(Product product, int quantity, double price)
 	this.price = price;
 	this.quantity = quantity;
 }
-private Product getProduct()
+public Product getProduct()
 {
 	return product;
 }
-private int getQuantity()
+public int getQuantity()
 {
 	return this.quantity;
 }
-private double getPrice()
+public double getPrice()
 {
 	return this.price;
 }

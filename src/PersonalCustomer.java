@@ -3,12 +3,9 @@ public class PersonalCustomer extends Customer
 {
 private int creditCardNumber;
 
-public PersonalCustomer(String name, String address, float creditRaing, float discountRating, int creditCard)
+public PersonalCustomer(String name, String address, float creditRating, float discountRating, int creditCardNumber) 
 {
-	this.setname(name);
-	this.setAddress(address);
-	this.setCreditRating(creditRaing);
-	this.setDiscountRating(discountRating);
-	this.creditCardNumber = creditCard;
+	 		super(name, address, creditRating, discountRating);
+	 		this.creditCardNumber = creditCardNumber;
 }
 }
